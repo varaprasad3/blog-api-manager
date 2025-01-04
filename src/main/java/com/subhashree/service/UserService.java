@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.subhashree.payload.UserDto;
 
-@Service
+
 public interface UserService {
 	
 

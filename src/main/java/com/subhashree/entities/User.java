@@ -2,6 +2,8 @@ package com.subhashree.entities;
 
 import java.sql.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,24 +15,19 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="users")
 @NoArgsConstructor
 @Getter
 @Setter
 public class User {
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
-	@Column(name="user_name",nullable=false,length=100)
+	@Column(name = "user_name", nullable = false, length = 100)
 	private String name;
 	private String email;
 	private String password;
 	private String about;
+	@JsonFormat(shape=JsonFormat.Shape.STRING, pattern="dd-MM-yyyy")
 	private Date created_at;
-	
-	}
-	
 
-	
-
-
+}
